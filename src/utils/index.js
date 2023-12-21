@@ -8,8 +8,7 @@ export const pickUpAddress = [
   {
     id: 1,
     title: 'pickupAddress',
-    // address: '5085 Westheimer Rd, Houston, TX 77056',
-    address: '600 4th Ave, Seattle, WA 98101',
+    address: '13350 Dallas Pkwy Dallas, TX 75240 United States',
   },
 ]
 

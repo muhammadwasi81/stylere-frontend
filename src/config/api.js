@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const apiGlobal = axios.create({
-  baseURL: 'http://localhost:8000/api',
-  // baseURL: 'https://stylre-app.onrender.com/api/products',
+  // baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://stylre-app.onrender.com/api/products',
 })
 
 apiGlobal.interceptors.request.use(

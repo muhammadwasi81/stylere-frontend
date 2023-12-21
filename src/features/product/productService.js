@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const apiGlobal = axios.create({
-  baseURL: 'http://localhost:8000/api/products/',
-  // baseURL: 'https://stylre-app.onrender.com/api/products',
+  // baseURL: 'http://localhost:8000/api/products/',
+  baseURL: 'https://stylere.onrender.com/api/products',
 })
 
 const createProductService = async (payload) => {

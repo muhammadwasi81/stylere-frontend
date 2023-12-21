@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const apiGlobal = axios.create({
-  baseURL: 'http://localhost:8000/api/payments/',
-  // baseURL: 'https://stylre-app.onrender.com/api/payments',
+  // baseURL: 'http://localhost:8000/api/payments/',
+  baseURL: 'https://stylere.onrender.com/api/payments',
 })
 
 const createPaymentService = async (payload) => {

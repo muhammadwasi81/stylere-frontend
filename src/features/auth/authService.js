@@ -1,8 +1,10 @@
 import axios from 'axios'
 
+const ADMIN_PREFIX = 'https://stylere.onrender.com/api/admin/'
+
 const apiGlobal = axios.create({
-  baseURL: 'http://localhost:8000/api/users',
-  // baseURL: 'https://stylre-app.onrender.com/api/users',
+  // baseURL: 'http://localhost:8000/api/users',
+  baseURL: 'https://stylere.onrender.com/api/users',
 })
 
 const registerService = async (userData) => {
@@ -36,6 +38,28 @@ const getUserById = async (id) => {
   return response.data
 }
 
+const dashboardData = async () => {
+  try {
+    const response = await axios.get(`${ADMIN_PREFIX}dashboard_data`)
+    console.log(response.data, 'dashboardData.service')
+    return response.data
+  } catch (error) {
+    console.log(error, 'error')
+    throw new Error(error, { cause: error })
+  }
+}
+
+const dashboardStats = async () => {
+  try {
+    const response = await axios.get(`${ADMIN_PREFIX}dashboard_stats`)
+    console.log(response.data, 'dashboardStats.service')
+    return response.data
+  } catch (error) {
+    console.log(error, 'error')
+    throw new Error(error, { cause: error })
+  }
+}
+
 // Logout user
 const logoutService = () => {
   localStorage.removeItem('user')
@@ -46,6 +70,8 @@ const authService = {
   logoutService,
   loginService,
   getUserById,
+  dashboardData,
+  dashboardStats,
 }
 
 export default authService

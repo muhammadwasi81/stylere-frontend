@@ -2,6 +2,8 @@
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { DashboardLayout } from '../components/Layout/dashboardLayout'
+
 const Layout = ({ children, title }) => {
   return (
     <>
@@ -9,9 +11,11 @@ const Layout = ({ children, title }) => {
         <Helmet>
           <title>{`Stylre - ${title}`}</title>
         </Helmet>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        {/* <Nav /> */}
+        <DashboardLayout>
+          <main>{children}</main>
+        </DashboardLayout>
+        {/* <Footer /> */}
       </HelmetProvider>
     </>
   )

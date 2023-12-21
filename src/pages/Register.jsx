@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Layout from './Layout'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -13,6 +12,7 @@ import {
   AiOutlinePhone,
   AiOutlineUserAdd,
 } from 'react-icons/ai'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -110,9 +110,14 @@ const Register = () => {
       })
   }
   return (
-    <Layout title="Register">
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>{`Stylre - Login`}</title>
+        </Helmet>
+      </HelmetProvider>
       {isLoading && <Loader />}
-      <div className="signup-wrapper">
+      <div className="signup-wrapper mt-5">
         <section className="container signupWrapper">
           <form onSubmit={onSubmit}>
             <h1 className="text-black fw-bolder ">Create an Account</h1>
@@ -249,7 +254,7 @@ const Register = () => {
           </form>
         </section>
       </div>
-    </Layout>
+    </>
   )
 }
 
